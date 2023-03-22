@@ -1,7 +1,7 @@
 import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,12 @@ import { SearchtitleComponent } from './components/searchtitle/searchtitle.compo
 import { AboutComponent } from './components/about/about.component';
 import { SearchComponent } from './componets/search/search.component';
 
+const routes:Routes=[
+  {path:'', component:SearchtitleComponent},
+  {path:'about', component:AboutComponent},
+  {path:'search', component:SearchComponent}
+  ]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +23,6 @@ import { SearchComponent } from './componets/search/search.component';
     AboutComponent,
     SearchComponent
   ],
-  const routes:Routes= [
-    {path:'', component:SearchtitleComponent},
-    {path:'about', component:AboutComponent},
-    {path:'search', component:SearchComponent}
-    ],
   imports: [
     BrowserModule,
     HttpClientModule,
