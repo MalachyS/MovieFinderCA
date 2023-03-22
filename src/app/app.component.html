@@ -7,6 +7,7 @@
             <input type="text" name="movie-name" class="form-control" #moviename placeholder="Enter movie name">
         </div>
         <button (click)="getMovieDetails(moviename.value)" type="submit" class="btn btn-primary mt-2">Get Movie Details</button>
+    <app-seachtitle></app-seachtitle>
     </form>
 
     <div class="row bg-light mt-4 p-4" *ngIf="movieData">
@@ -24,5 +25,6 @@
                 </div>
             </div>
         </div>
+        <router-outlet></router-outlet>
     </div>
 </div>
