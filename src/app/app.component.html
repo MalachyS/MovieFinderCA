@@ -7,7 +7,7 @@
         <button (click)="getMovieDetails(moviename.value)" type="submit" class="btn btn-primary mt-2">Get Movie Details</button>
     </form>
 
-    <div class="row bg-lighjt mt-4 p-4" *ngIf="movieData">
+    <div class="row bg-light mt-4 p-4" *ngIf="movieData">
         <div class="col-sm-4">
             <div>
                 <h3>{{movieData.Error}}</h3>
