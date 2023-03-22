@@ -13,6 +13,7 @@ export class OmdbApiService {
 
   private _siteURL="https://www.omdbapi.com/"
   private _key="?apikey=92625ffc&t="
+  private _key2="?apikey=fa53e047&s="
   constructor(private _http:HttpClient) { }
 
   getMovieData(movieName:string):Observable<IOMDBResponse> {
