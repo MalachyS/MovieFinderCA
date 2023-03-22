@@ -8,35 +8,34 @@ import { IOMDBResponse2 } from 'src/app/omdbresponse2';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  getMovieDetails(movieName:string): boolean {
-    this._omdbService.getMoviesData(movieName,this.currentPage).subscribe(
-      movieData => {
-        this.movieData=movieData;
-        //console.log("Director name : " + this.movieData.Director);
-      }
-    )
-    return false;
-  }
-
-  getPreviousPage(movieName:string): boolean {
-    this.currentPage--;
-    if (this.currentPage<1)
-      this.currentPage=1;
-    this._omdbService.getMoviesData(movieName, this.currentPage).subscribe(
-      movieData => {
-        this.movieData=movieData;
-      }
-    )
-    return false;
-  }
-
-  getNextPage(movieName:string): boolean {
-    this.currentPage++;
-    this._omdbService.getMoviesData(movieName, this.currentPage).subscribe(
-      movieData => {
-        this.movieData=movieData;
-      }
-    )
-    return false;
-  }
+movieData: IOMDBResponse2 | any;
+error: any;
+currentPage = 1;
+maxPages = 0;
+constructor(private _omdbService:OmdbApiService) {}
+getMovieDetails(movieName:string): boolean {
+  console.log(this.movieData);
+  this._omdbService.getMovieData(movieName).subscribe(
+    movieData=> {
+      this.movieData=movieData;
+    
+    }
+  )
+  return false;
 }
+getPreviousPage(movieName:string) : boolean {
+  this.currentPage--;
+  if (this.currentPage<1)
+  this.currentPage=1;
+  this._omdbService.getMoviesData(movieName, this.currentPage).subscribe(
+    movieData => {
+      this.movieData=movieData;
+    }
+  )
+  return false;
+}
+getNextPage(moviename:string) {
+this.currentPage++;
+
+
+}}
